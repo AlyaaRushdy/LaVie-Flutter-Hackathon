@@ -1,4 +1,4 @@
-# la_vie_app_1
+# LaVie App
 
 A new Flutter project.
 
