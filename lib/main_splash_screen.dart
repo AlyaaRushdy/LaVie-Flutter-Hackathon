@@ -18,7 +18,6 @@ class MainSplashScreen extends StatelessWidget {
             width: 234.0,
           ),
         ),
-        disableNavigation: true,
         nextScreen: const LogIn(),
         splashTransition: SplashTransition.slideTransition,
         duration: 3000,
