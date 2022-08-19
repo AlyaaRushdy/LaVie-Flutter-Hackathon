@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:la_vie_app_1/main_splash_screen.dart' as splash_screen;
 
 void main() {
-  runApp(const splash_screen.MainSplashScreen());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,10 +13,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          /* bottomNavigationBar: NavigationBar(
-          backgroundColor: Colors.blue,
-        ), */
-          ),
+        body: splash_screen.MainSplashScreen(),
+      ),
     );
   }
 }

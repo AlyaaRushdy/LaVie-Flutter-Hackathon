@@ -8,9 +8,8 @@ class MainSplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AnimatedSplashScreen(
+    return Scaffold(
+      body: AnimatedSplashScreen(
         splash: 'images/LogoSplash.png',
         nextScreen: const LogIn(),
         splashTransition: SplashTransition.slideTransition,
