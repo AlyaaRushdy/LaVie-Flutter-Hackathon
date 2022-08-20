@@ -11,12 +11,10 @@ class MainSplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AnimatedSplashScreen(
-        splash: Container(
-          child: SvgPicture.asset(
-            "images/LogoSp.svg",
-            height: 68.0,
-            width: 234.0,
-          ),
+        splash: SvgPicture.asset(
+          "images/LogoSp.svg",
+          height: 68.0,
+          width: 234.0,
         ),
         nextScreen: const LogIn(),
         splashTransition: SplashTransition.slideTransition,
