@@ -171,12 +171,53 @@ class LogIn extends StatelessWidget {
 
                     // Space
                     const SizedBox(
+                      height: 25.0,
+                    ),
+
+                    //divider with text
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Divider(
+                            thickness: 1.0,
+                            color: dividerGrey,
+                            endIndent: 7.5,
+                          ),
+                        ),
+                        Text(
+                          "or continue with",
+                          style: TextStyle(color: dividerGrey),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            thickness: 1.0,
+                            color: dividerGrey,
+                            indent: 7.5,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // Space
+                    const SizedBox(
                       height: 20.0,
                     ),
 
-                    Divider(
-                      color: dividerGrey,
-                      thickness: 1.5,
+                    //google and facebook icons
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton.icon(
+                          onPressed: () {},
+                          icon: SvgPicture.asset("images/Google.svg"),
+                          label: const Text(''),
+                        ),
+                        TextButton.icon(
+                          onPressed: () {},
+                          icon: SvgPicture.asset("images/Facebook.svg"),
+                          label: const Text(''),
+                        ),
+                      ],
                     ),
                   ],
                 ),
