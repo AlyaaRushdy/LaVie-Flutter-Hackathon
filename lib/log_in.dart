@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:la_vie_app_1/sign_up.dart' as sign_up_page;
 
@@ -13,81 +12,81 @@ class LogIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          //TopRight Decoration
-          Align(
-            alignment: Alignment.topRight,
-            child: SvgPicture.asset(
-              "images/LogInDecoration.svg",
-              height: 125,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //TopRight Decoration
+            Align(
+              alignment: Alignment.topRight,
+              child: SvgPicture.asset(
+                "images/LogInDecoration.svg",
+                height: 125,
+              ),
             ),
-          ),
 
-          //space
-          const SizedBox(
-            height: 5.0,
-          ),
-
-          //Logo
-          Align(
-            alignment: Alignment.topCenter,
-            child: SvgPicture.asset(
-              "images/Logo.svg",
-              width: 120.0,
-              height: 43.0,
+            //space
+            const SizedBox(
+              height: 5.0,
             ),
-          ),
 
-          //Sign Up and Log In Buttons
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 30.0,
-              horizontal: 0.0,
+            //Logo
+            Align(
+              alignment: Alignment.topCenter,
+              child: SvgPicture.asset(
+                "images/Logo.svg",
+                width: 120.0,
+                height: 43.0,
+              ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                //Sign Up Button
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    primary: textGrey,
+
+            //Sign Up and Log In Buttons
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 30.0,
+                horizontal: 0.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //Sign Up Button
+                  TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      primary: textGrey,
+                    ),
+                    child: const Text("Sign Up"),
                   ),
-                  child: const Text("Sign Up"),
-                ),
 
-                //Log In Button
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: myGreen,
-                        width: 2.0,
+                  //Log In Button
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: myGreen,
+                          width: 2.0,
+                        ),
                       ),
                     ),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text('Log In'),
+                    ),
                   ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text('Log In'),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
 
-          // Space
-          const SizedBox(
-            height: 10.0,
-          ),
+            // Space
+            const SizedBox(
+              height: 10.0,
+            ),
 
-          //Form
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 25.0),
-            alignment: Alignment.center,
-            child: Form(
-              child: SingleChildScrollView(
+            //Form
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 25.0),
+              alignment: Alignment.center,
+              child: Form(
                 child: Column(
                   children: [
                     //Email
@@ -183,8 +182,25 @@ class LogIn extends StatelessWidget {
                 ),
               ),
             ),
-          )
-        ],
+
+            // Space
+            const SizedBox(
+              height: 10.0,
+            ),
+
+            //BottomLeft Decoration
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: RotatedBox(
+                quarterTurns: 2,
+                child: SvgPicture.asset(
+                  "images/LogInDecoration.svg",
+                  height: 125,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
