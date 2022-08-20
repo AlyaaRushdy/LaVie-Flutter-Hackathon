@@ -1,42 +1,190 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:la_vie_app_1/sign_up.dart' as sign_up_page;
 
 class LogIn extends StatelessWidget {
   const LogIn({Key? key}) : super(key: key);
 
+  final Color myGreen = const Color.fromRGBO(26, 188, 0, 1);
+  final Color textGrey = const Color.fromRGBO(147, 147, 147, 1);
+  final Color dividerGrey = const Color.fromRGBO(151, 151, 151, 1);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Container(
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.topRight,
-                child: Image.asset('images/regDecoration.png'),
-              ),
-              Align(
-                alignment: Alignment.topCenter,
-                child: Image.asset('images/Logo.png'),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 10.0,
-                  horizontal: 12.0,
+    return Scaffold(
+      body: Column(
+        children: [
+          //TopRight Decoration
+          Align(
+            alignment: Alignment.topRight,
+            child: SvgPicture.asset(
+              "images/LogInDecoration.svg",
+              height: 125,
+            ),
+          ),
+
+          //space
+          const SizedBox(
+            height: 5.0,
+          ),
+
+          //Logo
+          Align(
+            alignment: Alignment.topCenter,
+            child: SvgPicture.asset(
+              "images/Logo.svg",
+              width: 120.0,
+              height: 43.0,
+            ),
+          ),
+
+          //Sign Up and Log In Buttons
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 30.0,
+              horizontal: 0.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //Sign Up Button
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    primary: textGrey,
+                  ),
+                  child: const Text("Sign Up"),
                 ),
-                //alignment: Alignment.topCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Text("Sign In"),
-                    Text("Log In"),
+
+                //Log In Button
+                DecoratedBox(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: myGreen,
+                        width: 2.0,
+                      ),
+                    ),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const Text('Log In'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // Space
+          const SizedBox(
+            height: 10.0,
+          ),
+
+          //Form
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 25.0),
+            alignment: Alignment.center,
+            child: Form(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    //Email
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      heightFactor: 1.5,
+                      child: Text(
+                        "Email",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: textGrey,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: myGreen,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: textGrey,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // Space
+                    const SizedBox(
+                      height: 15.0,
+                    ),
+
+                    //Password
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      heightFactor: 1.5,
+                      child: Text(
+                        "Password",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: textGrey,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: myGreen,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: textGrey,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // Space
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+
+                    //Log In Action Button
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size.fromHeight(45.0),
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        "Log In",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+
+                    // Space
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+
+                    Divider(
+                      color: dividerGrey,
+                      thickness: 1.5,
+                    ),
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
