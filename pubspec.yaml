@@ -71,6 +71,10 @@ flutter:
       - images/LogInDecoration.svg
       - images/Google.svg
       - images/Facebook.svg
+      - images/plant1.svg
+      - images/plant2.svg
+      - images/plant3.svg
+      - images/plant4.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
