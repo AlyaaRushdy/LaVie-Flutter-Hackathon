@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:la_vie_app_1/home.dart' as home_page;
 
 class Search extends StatelessWidget {
   const Search({Key? key}) : super(key: key);
@@ -13,7 +14,6 @@ class Search extends StatelessWidget {
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.fromLTRB(25, 50, 20, 25),
-        alignment: Alignment.topLeft,
         child: Column(
           children: [
             TextFormField(
@@ -49,12 +49,123 @@ class Search extends StatelessWidget {
             ),
 
             //Recent searchs
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(dividerGrey),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 15, 0, 5),
+              child: SizedBox(
+                width: 320,
+                child: Text(
+                  "Search Results",
+                  style: TextStyle(
+                    color: dividerGrey,
+                    fontSize: 16,
+                  ),
+                ),
               ),
-              child: const Text("Search Results"),
+            ),
+            //Search res. 1
+            TextFormField(
+              readOnly: true,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const home_page.HomePage(),
+                  ),
+                );
+              },
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(0),
+                hintText: "OnTap Test",
+                hintStyle: TextStyle(
+                  color: dividerGrey,
+                ),
+                prefixIcon: Icon(
+                  Icons.history_rounded,
+                  color: dividerGrey,
+                ),
+                suffixIcon: Icon(
+                  Icons.clear_rounded,
+                  color: dividerGrey,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white12,
+                    width: 0.001,
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white12,
+                    width: 0.001,
+                  ),
+                ),
+              ),
+            ),
+
+            //search res.2
+            TextFormField(
+              readOnly: true,
+              onTap: () {},
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(0),
+                hintText: "GARDENIA PLANT",
+                hintStyle: TextStyle(
+                  color: dividerGrey,
+                ),
+                prefixIcon: Icon(
+                  Icons.history_rounded,
+                  color: dividerGrey,
+                ),
+                suffixIcon: Icon(
+                  Icons.clear_rounded,
+                  color: dividerGrey,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white12,
+                    width: 0.001,
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white12,
+                    width: 0.001,
+                  ),
+                ),
+              ),
+            ),
+
+            //search res. 3
+            TextFormField(
+              readOnly: true,
+              onTap: () {},
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.all(0),
+                hintText: "GARDENIA PLANT",
+                hintStyle: TextStyle(
+                  color: dividerGrey,
+                ),
+                prefixIcon: Icon(
+                  Icons.history_rounded,
+                  color: dividerGrey,
+                ),
+                suffixIcon: Icon(
+                  Icons.clear_rounded,
+                  color: dividerGrey,
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white12,
+                    width: 0.001,
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.white12,
+                    width: 0.001,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
