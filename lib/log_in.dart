@@ -51,7 +51,14 @@ class LogIn extends StatelessWidget {
                 children: [
                   //Sign Up Button
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const sign_up_page.SignUp(),
+                        ),
+                      );
+                    },
                     style: TextButton.styleFrom(
                       primary: textGrey,
                     ),
