@@ -224,6 +224,7 @@ class SignUp extends StatelessWidget {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -258,6 +259,7 @@ class SignUp extends StatelessWidget {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(

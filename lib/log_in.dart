@@ -145,6 +145,7 @@ class LogIn extends StatelessWidget {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                       decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
