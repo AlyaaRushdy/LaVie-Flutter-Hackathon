@@ -17,7 +17,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //bottomNavigationBar: Row(),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.fromLTRB(20, 50, 20, 50),
