@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
   final Color textGrey = const Color.fromRGBO(147, 147, 147, 1);
   final Color dividerGrey = const Color.fromRGBO(151, 151, 151, 1);
   final Color searchBackground = const Color.fromRGBO(221, 222, 225, 0.4);
+  final SizedBox categorySpace = const SizedBox(
+    width: 10,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -107,9 +110,149 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              // Space
-              const SizedBox(
-                height: 10.0,
+              //Category Scroll Bar
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    //All Button
+                    /* SizedBox(
+                      width: 50.0,
+                      height: 45.0,
+                      child: TextField(
+                        readOnly: true,
+                        onTap: () {},
+                        decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                          hintText: "All",
+                          alignLabelWithHint: true,
+                          hintStyle: TextStyle(
+                            color: myGreen,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: myGreen,
+                              width: 1.75,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: myGreen,
+                              width: 1.75,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+               */
+                    //All Button
+                    OutlinedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(
+                          width: 1.25,
+                          color: myGreen,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                      child: Text(
+                        "All",
+                        style: TextStyle(
+                          color: myGreen,
+                        ),
+                      ),
+                    ),
+                    categorySpace,
+
+                    //Plants Button
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(searchBackground),
+                      ),
+                      child: Text(
+                        "Plants",
+                        style: TextStyle(color: dividerGrey),
+                      ),
+                    ),
+                    categorySpace,
+
+                    //Seeds Button
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(searchBackground),
+                      ),
+                      child: Text(
+                        "Seeds",
+                        style: TextStyle(color: dividerGrey),
+                      ),
+                    ),
+                    categorySpace,
+
+                    //Seeds Button
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(searchBackground),
+                      ),
+                      child: Text(
+                        "Tools",
+                        style: TextStyle(color: dividerGrey),
+                      ),
+                    ),
+                    categorySpace,
+
+                    //Seeds Button
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(searchBackground),
+                      ),
+                      child: Text(
+                        "Seeds",
+                        style: TextStyle(color: dividerGrey),
+                      ),
+                    ),
+                    categorySpace,
+
+                    //Seeds Button
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(searchBackground),
+                      ),
+                      child: Text(
+                        "Seeds",
+                        style: TextStyle(color: dividerGrey),
+                      ),
+                    ),
+                    categorySpace,
+
+                    //Seeds Button
+                    TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(searchBackground),
+                      ),
+                      child: Text(
+                        "Seeds",
+                        style: TextStyle(color: dividerGrey),
+                      ),
+                    ),
+                    categorySpace,
+                  ],
+                ),
               ),
             ],
           ),
