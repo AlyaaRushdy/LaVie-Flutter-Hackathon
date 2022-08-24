@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:la_vie_app_1/project_colors.dart';
 import 'package:la_vie_app_1/main_splash_screen.dart' as splash_screen;
-import 'package:la_vie_app_1/home.dart' as home_page;
-import 'package:la_vie_app_1/test.dart' as test;
 
 void main() {
   runApp(const MyApp());
@@ -29,13 +27,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Scaffold(
-        body: home_page.HomePage(),
-        //splash_screen.MainSplashScreen(),
-
-        /* floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-        ), */
+      home: const Scaffold(
+        body: splash_screen.MainSplashScreen(),
       ),
     );
   }
