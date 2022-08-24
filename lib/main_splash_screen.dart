@@ -12,7 +12,7 @@ class MainSplashScreen extends StatelessWidget {
     return Scaffold(
       body: AnimatedSplashScreen(
         splash: SvgPicture.asset(
-          "images/LogoSp.svg",
+          "images/Logo.svg",
           height: 68.0,
           width: 234.0,
         ),
