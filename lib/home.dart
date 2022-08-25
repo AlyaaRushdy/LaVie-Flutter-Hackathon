@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:la_vie_app_1/project_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:la_vie_app_1/project_colors.dart';
+import 'package:la_vie_app_1/bottom_nav_bar.dart';
 import 'package:la_vie_app_1/cart.dart' as cart_page;
 import 'package:la_vie_app_1/search.dart' as search_page;
 
@@ -22,6 +23,24 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //home floating button
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: myGreen,
+        child: const Icon(Icons.home_outlined, color: Colors.white),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomePage(),
+            ),
+          );
+        },
+      ),
+
+      //bottom nav bar
+      bottomNavigationBar: bottomNavBar,
+
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.fromLTRB(20, 50, 20, 50),
