@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:la_vie_app_1/project_colors.dart';
+import 'package:la_vie_app_1/bottom_nav_bar.dart';
+import 'package:la_vie_app_1/home_FAB.dart';
 import 'package:la_vie_app_1/cart.dart' as cart_page;
 import 'package:la_vie_app_1/search.dart' as search_page;
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
-  final Color myGreen = const Color.fromRGBO(26, 188, 0, 1);
-  final Color textGrey = const Color.fromRGBO(147, 147, 147, 1);
-  final Color dividerGrey = const Color.fromRGBO(151, 151, 151, 1);
-  final Color searchBackground = const Color.fromRGBO(221, 222, 225, 0.4);
-  final SizedBox categorySpace = const SizedBox(
+  final SizedBox w10Space = const SizedBox(
     width: 10,
+  );
+
+  final ButtonStyle inactiveCategoryButtonStyle = ButtonStyle(
+    backgroundColor: MaterialStateProperty.all(searchBackground),
+  );
+
+  final TextStyle inactiveCategoryButtonTextStyle = const TextStyle(
+    color: dividerGrey,
   );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //home floating button
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: const HomeFAB(),
+
+      //bottom nav bar
+      bottomNavigationBar: const MyBottomNavBar(),
       body: SingleChildScrollView(
         child: Container(
           margin: const EdgeInsets.fromLTRB(20, 50, 20, 50),
@@ -36,14 +49,10 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 25, 0, 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     //Search Bar
-                    SizedBox(
-                      width: 250,
-                      height: 40.0,
-                      //height: ,
+                    Expanded(
                       child: TextFormField(
                         onTap: () {
                           Navigator.push(
@@ -53,10 +62,10 @@ class HomePage extends StatelessWidget {
                             ),
                           );
                         },
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           filled: true,
                           fillColor: searchBackground,
-                          contentPadding: const EdgeInsets.all(0),
+                          contentPadding: EdgeInsets.all(0),
                           hintText: "Search",
                           hintStyle: TextStyle(
                             color: dividerGrey,
@@ -69,29 +78,25 @@ class HomePage extends StatelessWidget {
                             borderSide: BorderSide(
                               color: searchBackground,
                             ),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(5),
-                            ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: searchBackground,
-                            ),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(5),
                             ),
                           ),
                         ),
                       ),
                     ),
 
+                    //space
+                    w10Space,
+
                     //Cart Button
                     TextButton(
                       style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 0),
                         backgroundColor: myGreen,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
                       ),
                       onPressed: () {
                         Navigator.push(
@@ -116,141 +121,68 @@ class HomePage extends StatelessWidget {
                 child: Row(
                   children: [
                     //All Button
-                    /* SizedBox(
-                      width: 50.0,
-                      height: 45.0,
-                      child: TextField(
-                        readOnly: true,
-                        onTap: () {},
-                        decoration: InputDecoration(
-                          contentPadding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                          hintText: "All",
-                          alignLabelWithHint: true,
-                          hintStyle: TextStyle(
-                            color: myGreen,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: myGreen,
-                              width: 1.75,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: myGreen,
-                              width: 1.75,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-               */
-                    //All Button
                     OutlinedButton(
                       onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                          width: 1.25,
-                          color: myGreen,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                      ),
-                      child: Text(
+                      child: const Text(
                         "All",
-                        style: TextStyle(
-                          color: myGreen,
-                        ),
                       ),
                     ),
-                    categorySpace,
+                    w10Space,
 
                     //Plants Button
                     TextButton(
                       onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(searchBackground),
-                      ),
+                      style: inactiveCategoryButtonStyle,
                       child: Text(
                         "Plants",
-                        style: TextStyle(color: dividerGrey),
+                        style: inactiveCategoryButtonTextStyle,
                       ),
                     ),
-                    categorySpace,
+                    w10Space,
 
                     //Seeds Button
                     TextButton(
                       onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(searchBackground),
-                      ),
+                      style: inactiveCategoryButtonStyle,
                       child: Text(
                         "Seeds",
-                        style: TextStyle(color: dividerGrey),
+                        style: inactiveCategoryButtonTextStyle,
                       ),
                     ),
-                    categorySpace,
+                    w10Space,
 
                     //Seeds Button
                     TextButton(
                       onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(searchBackground),
-                      ),
+                      style: inactiveCategoryButtonStyle,
                       child: Text(
                         "Tools",
-                        style: TextStyle(color: dividerGrey),
+                        style: inactiveCategoryButtonTextStyle,
                       ),
                     ),
-                    categorySpace,
+                    w10Space,
 
                     //Seeds Button
                     TextButton(
                       onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(searchBackground),
-                      ),
+                      style: inactiveCategoryButtonStyle,
                       child: Text(
                         "Seeds",
-                        style: TextStyle(color: dividerGrey),
+                        style: inactiveCategoryButtonTextStyle,
                       ),
                     ),
-                    categorySpace,
+                    w10Space,
 
                     //Seeds Button
                     TextButton(
                       onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(searchBackground),
-                      ),
+                      style: inactiveCategoryButtonStyle,
                       child: Text(
                         "Seeds",
-                        style: TextStyle(color: dividerGrey),
+                        style: inactiveCategoryButtonTextStyle,
                       ),
                     ),
-                    categorySpace,
-
-                    //Seeds Button
-                    TextButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(searchBackground),
-                      ),
-                      child: Text(
-                        "Seeds",
-                        style: TextStyle(color: dividerGrey),
-                      ),
-                    ),
-                    categorySpace,
+                    w10Space,
                   ],
                 ),
               ),

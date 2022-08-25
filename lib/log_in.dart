@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:la_vie_app_1/project_colors.dart';
+import 'package:la_vie_app_1/home.dart' as home_page;
 import 'package:la_vie_app_1/sign_up.dart' as sign_up_page;
 
 class LogIn extends StatelessWidget {
   const LogIn({Key? key}) : super(key: key);
 
-  final Color myGreen = const Color.fromRGBO(26, 188, 0, 1);
-  final Color textGrey = const Color.fromRGBO(147, 147, 147, 1);
-  final Color dividerGrey = const Color.fromRGBO(151, 151, 151, 1);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: myGreen,
+        child: const Icon(Icons.home_outlined, color: Colors.white),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => home_page.HomePage(),
+            ),
+          );
+        },
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -67,7 +77,7 @@ class LogIn extends StatelessWidget {
 
                   //Log In Button
                   DecoratedBox(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
                           color: myGreen,
@@ -97,7 +107,7 @@ class LogIn extends StatelessWidget {
                 child: Column(
                   children: [
                     //Email
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       heightFactor: 1.5,
                       child: Text(
@@ -111,7 +121,7 @@ class LogIn extends StatelessWidget {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: myGreen,
@@ -131,7 +141,7 @@ class LogIn extends StatelessWidget {
                     ),
 
                     //Password
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       heightFactor: 1.5,
                       child: Text(
@@ -146,7 +156,7 @@ class LogIn extends StatelessWidget {
                     TextFormField(
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: myGreen,
@@ -184,7 +194,7 @@ class LogIn extends StatelessWidget {
 
                     //divider with text
                     Row(
-                      children: <Widget>[
+                      children: const <Widget>[
                         Expanded(
                           child: Divider(
                             thickness: 1.0,

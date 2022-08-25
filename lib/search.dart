@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:la_vie_app_1/project_colors.dart';
 import 'package:la_vie_app_1/home.dart' as home_page;
 
 class Search extends StatelessWidget {
   const Search({Key? key}) : super(key: key);
-
-  final Color myGreen = const Color.fromRGBO(26, 188, 0, 1);
-  final Color textGrey = const Color.fromRGBO(147, 147, 147, 1);
-  final Color dividerGrey = const Color.fromRGBO(151, 151, 151, 1);
-  final Color searchBackground = const Color.fromRGBO(221, 222, 225, 0.4);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +12,12 @@ class Search extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(25, 50, 20, 25),
         child: Column(
           children: [
+            //search bar
             TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 filled: true,
                 fillColor: searchBackground,
-                contentPadding: const EdgeInsets.all(0),
+                contentPadding: EdgeInsets.all(0),
                 hintText: "Search",
                 hintStyle: TextStyle(
                   color: dividerGrey,
@@ -33,7 +30,7 @@ class Search extends StatelessWidget {
                   borderSide: BorderSide(
                     color: searchBackground,
                   ),
-                  borderRadius: const BorderRadius.all(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(5),
                   ),
                 ),
@@ -41,7 +38,7 @@ class Search extends StatelessWidget {
                   borderSide: BorderSide(
                     color: searchBackground,
                   ),
-                  borderRadius: const BorderRadius.all(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(5),
                   ),
                 ),
@@ -49,10 +46,9 @@ class Search extends StatelessWidget {
             ),
 
             //Recent searchs
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 15, 0, 5),
-              child: SizedBox(
-                width: 320,
+            const Padding(
+              padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
+              child: Expanded(
                 child: Text(
                   "Search Results",
                   style: TextStyle(
@@ -69,12 +65,12 @@ class Search extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const home_page.HomePage(),
+                    builder: (context) => home_page.HomePage(),
                   ),
                 );
               },
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(0),
+              decoration: const InputDecoration(
+                contentPadding: EdgeInsets.all(0),
                 hintText: "OnTap Test",
                 hintStyle: TextStyle(
                   color: dividerGrey,
@@ -87,13 +83,13 @@ class Search extends StatelessWidget {
                   Icons.clear_rounded,
                   color: dividerGrey,
                 ),
-                focusedBorder: const OutlineInputBorder(
+                focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white12,
                     width: 0.001,
                   ),
                 ),
-                enabledBorder: const OutlineInputBorder(
+                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white12,
                     width: 0.001,
@@ -106,8 +102,8 @@ class Search extends StatelessWidget {
             TextFormField(
               readOnly: true,
               onTap: () {},
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(0),
+              decoration: const InputDecoration(
+                contentPadding: EdgeInsets.all(0),
                 hintText: "GARDENIA PLANT",
                 hintStyle: TextStyle(
                   color: dividerGrey,
@@ -120,13 +116,13 @@ class Search extends StatelessWidget {
                   Icons.clear_rounded,
                   color: dividerGrey,
                 ),
-                focusedBorder: const OutlineInputBorder(
+                focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white12,
                     width: 0.001,
                   ),
                 ),
-                enabledBorder: const OutlineInputBorder(
+                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white12,
                     width: 0.001,
@@ -139,8 +135,8 @@ class Search extends StatelessWidget {
             TextFormField(
               readOnly: true,
               onTap: () {},
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(0),
+              decoration: const InputDecoration(
+                contentPadding: EdgeInsets.all(0),
                 hintText: "GARDENIA PLANT",
                 hintStyle: TextStyle(
                   color: dividerGrey,
@@ -153,13 +149,13 @@ class Search extends StatelessWidget {
                   Icons.clear_rounded,
                   color: dividerGrey,
                 ),
-                focusedBorder: const OutlineInputBorder(
+                focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white12,
                     width: 0.001,
                   ),
                 ),
-                enabledBorder: const OutlineInputBorder(
+                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Colors.white12,
                     width: 0.001,

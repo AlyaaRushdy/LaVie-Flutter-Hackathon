@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:la_vie_app_1/project_colors.dart';
 import 'package:la_vie_app_1/log_in.dart' as log_in_page;
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
-
-  final Color myGreen = const Color.fromRGBO(26, 188, 0, 1);
-  final Color textGrey = const Color.fromRGBO(147, 147, 147, 1);
-  final Color dividerGrey = const Color.fromRGBO(151, 151, 151, 1);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +48,7 @@ class SignUp extends StatelessWidget {
                 children: [
                   //Sign Up Button
                   DecoratedBox(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
                           color: myGreen,
@@ -99,12 +96,11 @@ class SignUp extends StatelessWidget {
                     //First and Last names
                     Row(
                       children: [
-                        SizedBox(
-                          width: 150,
-                          height: 100,
+                        //first name
+                        Expanded(
                           child: Column(
                             children: [
-                              Align(
+                              const Align(
                                 alignment: Alignment.centerLeft,
                                 heightFactor: 1.5,
                                 child: Text(
@@ -118,7 +114,7 @@ class SignUp extends StatelessWidget {
                               ),
                               TextFormField(
                                 keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: myGreen,
@@ -134,15 +130,17 @@ class SignUp extends StatelessWidget {
                             ],
                           ),
                         ),
+
+                        //space
                         const SizedBox(
                           width: 10,
                         ),
-                        SizedBox(
-                          width: 150,
-                          height: 100,
+
+                        //lastname
+                        Expanded(
                           child: Column(
                             children: [
-                              Align(
+                              const Align(
                                 alignment: Alignment.centerLeft,
                                 heightFactor: 1.5,
                                 child: Text(
@@ -156,7 +154,7 @@ class SignUp extends StatelessWidget {
                               ),
                               TextFormField(
                                 keyboardType: TextInputType.name,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: myGreen,
@@ -176,7 +174,7 @@ class SignUp extends StatelessWidget {
                     ),
 
                     //Email
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       heightFactor: 1.5,
                       child: Text(
@@ -190,7 +188,7 @@ class SignUp extends StatelessWidget {
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: myGreen,
@@ -210,7 +208,7 @@ class SignUp extends StatelessWidget {
                     ),
 
                     //Password
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       heightFactor: 1.5,
                       child: Text(
@@ -225,7 +223,7 @@ class SignUp extends StatelessWidget {
                     TextFormField(
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: myGreen,
@@ -245,7 +243,7 @@ class SignUp extends StatelessWidget {
                     ),
 
                     //Password
-                    Align(
+                    const Align(
                       alignment: Alignment.centerLeft,
                       heightFactor: 1.5,
                       child: Text(
@@ -260,7 +258,7 @@ class SignUp extends StatelessWidget {
                     TextFormField(
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: myGreen,
@@ -298,7 +296,7 @@ class SignUp extends StatelessWidget {
 
                     //divider with text
                     Row(
-                      children: <Widget>[
+                      children: const <Widget>[
                         Expanded(
                           child: Divider(
                             thickness: 1.0,
