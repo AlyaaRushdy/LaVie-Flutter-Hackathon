@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:la_vie_app_1/project_colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:la_vie_app_1/home.dart' as home_page;
+import 'package:la_vie_app_1/blog_post.dart';
 
 class Blog extends StatelessWidget {
   const Blog({Key? key}) : super(key: key);
@@ -89,9 +90,9 @@ class Blog extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             //date
-                            Text(
+                            const Text(
                               "3 days ago",
                               style: TextStyle(
                                 fontSize: 16,
@@ -100,16 +101,29 @@ class Blog extends StatelessWidget {
                             ),
 
                             //post title
-                            Text(
-                              "5 Tips to treat plants",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                            TextField(
+                              readOnly: true,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const BlogPost(),
+                                  ),
+                                );
+                              },
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "5 Tips to treat plants",
+                                hintStyle: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
 
                             //post text snippet
-                            Text(
+                            const Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                               style: TextStyle(
                                 color: textGrey,
@@ -151,9 +165,9 @@ class Blog extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             //date
-                            Text(
+                            const Text(
                               "3 days ago",
                               style: TextStyle(
                                 fontSize: 16,
@@ -162,16 +176,29 @@ class Blog extends StatelessWidget {
                             ),
 
                             //post title
-                            Text(
-                              "5 Tips to treat plants",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                            TextField(
+                              readOnly: true,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const BlogPost(),
+                                  ),
+                                );
+                              },
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "5 Tips to treat plants",
+                                hintStyle: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
 
                             //post text snippet
-                            Text(
+                            const Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                               style: TextStyle(
                                 color: textGrey,
